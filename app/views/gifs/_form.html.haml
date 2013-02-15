@@ -1,0 +1,16 @@
+= form_for @gif do |f|
+  - if @gif.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@gif.errors.count, "error")} prohibited this gif from being saved:"
+      %ul
+        - @gif.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :titile
+    = f.text_field :titile
+  .field
+    = f.label :url
+    = f.text_field :url
+  .actions
+    = f.submit
