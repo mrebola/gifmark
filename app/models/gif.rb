@@ -4,8 +4,10 @@ require 'digest/sha1'
 class Gif < ActiveRecord::Base
   attr_accessible :title, :url, :tag_list
   acts_as_taggable
-  validates :url, presence: true
-  validates :url, :checksum, uniqueness: true
+  validates :title, presence: true
+  validates :url  , presence: true, uniqueness: true,
+                  format: { with: /^https*:\/\/[\w\S]+\/([\w\S]+\.gif)$/, message: "File url not valid" }
+  validates :checksum, uniqueness: true, allow_blank: true
 
   before_save :calculate_checksum, on: :create
 
