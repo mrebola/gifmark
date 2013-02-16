@@ -1,10 +1,9 @@
 class GifsController < ApplicationController
-  respond_to :html, :json
-  before_filter :load, only: [ :show, :edit, :create, :update, :destroy ]
+  respond_to :html, :json, :js
+  before_filter :load, only: [ :show, :edit, :update, :destroy ]
 
   def index
-    @gifs = Gif.all
-    @gif = Gif.new
+    @gifs = Gif.search(params[:q]).order('created_at DESC')
   end
 
   def show
@@ -19,8 +18,9 @@ class GifsController < ApplicationController
   end
 
   def create
+    @gif = Gif.create(params[:gif])
     if @gif.save
-      redirect_to @gif, notice: 'Gif was successfully created.' 
+      redirect_to root_path, notice: 'Gif was successfully created.' 
     else
       render action: "new" 
     end
@@ -41,7 +41,7 @@ class GifsController < ApplicationController
   private
 
   def load
-    @gif = Gif.find(params[:id])    
+    @gif = Gif.find(params[:id])
   end
   
 end

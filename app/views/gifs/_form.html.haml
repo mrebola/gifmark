@@ -1,16 +1,20 @@
-= form_for @gif do |f|
-  - if @gif.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@gif.errors.count, "error")} prohibited this gif from being saved:"
-      %ul
-        - @gif.errors.full_messages.each do |msg|
-          %li= msg
+.span8
+  = form_for @gif do |f|
+    - if @gif.errors.any?
+      #error_explanation
+        %h2= "#{pluralize(@gif.errors.count, "error")} prohibited this gif from being saved:"
+        %ul
+          - @gif.errors.full_messages.each do |msg|
+            %li= msg
+    %fieldset
+      = f.text_field :title, placeholder: :title, class: "input-xlarge"
+      %br/
+      = f.text_field :url, placeholder: :url, class: "input-xxlarge"
+    %p.actions
+      = f.submit "Save", class: 'btn btn-primary'
 
-  .field
-    = f.label :titile
-    = f.text_field :titile
-  .field
-    = f.label :url
-    = f.text_field :url
-  .actions
-    = f.submit
+  %hr/
+  .preview
+    %h2 Preview
+    %h3.title
+    %img

@@ -1,7 +1,8 @@
 %h1 Editing gif
 
-= render 'form'
+.row= render 'form'
 
-= link_to 'Show', @gif
-\|
-= link_to 'Back', gifs_path
+%p.row
+  = link_to 'Show', @gif
+  \|
+  = link_to 'Back', root_url

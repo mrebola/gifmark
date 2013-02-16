@@ -1,12 +1,2 @@
-%h1 gifMark
-
-= render "form"
-
-- @gifs.each do |gif|
-  %tr
-    %td= gif.titile
-    %td= gif.url
-    %td= gif.checksum
-    %td= link_to 'Show', gif
-    %td= link_to 'Edit', edit_gif_path(gif)
-    %td= link_to 'Destroy', gif, method: :delete, data: { confirm: 'Are you sure?' }
+= render "gifs/search"
+= render @gifs

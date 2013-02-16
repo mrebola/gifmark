@@ -1,15 +1,12 @@
-%p#notice= notice
+%h2= @gif.title
+%p
+  = image_tag @gif.url
+  %br/
+  %small
+    Checksum:
+    = @gif.checksum
 
 %p
-  %b Titile:
-  = @gif.titile
-%p
-  %b Url:
-  = @gif.url
-%p
-  %b Checksum:
-  = @gif.checksum
-
-= link_to 'Edit', edit_gif_path(@gif)
-\|
-= link_to 'Back', gifs_path
+  = link_to 'Edit', edit_gif_path(@gif)
+  \|
+  = link_to 'Back', root_url
