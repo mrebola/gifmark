@@ -10,6 +10,14 @@ body{
   font-size: 42px;
 }
 
+#tag_cloud {
+  width: 400px;
+  line-height: 1.6em;
+  .small { font-size: 0.8em; }
+  .medium { font-size: 1.2em; }
+  .large { font-size: 1.8em; }
+}
+
 .align-center{ text-align: center; }
 .align-right{ text-align: rigth; }
 .align-left{ text-align: left; }
