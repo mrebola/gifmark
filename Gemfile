@@ -7,7 +7,8 @@ gem 'rails', '3.2.12'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3', group: [ :development, :test ]
+gem 'pg'
+
 group :development do
   gem 'debugger'
   gem 'better_errors'
@@ -28,9 +29,9 @@ group :assets do
 end
 gem 'jquery-rails'
 gem 'haml-rails'
+gem 'texticle', '~> 2.0', require: 'texticle/rails'
 
 group :production do
-  gem 'pg'
   gem 'newrelic_rpm'
   gem 'memcachier'
   gem 'dalli'
