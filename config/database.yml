@@ -15,10 +15,10 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: myapp_development
+  database: gifmark_development
   pool: 5
-  username: myapp
-  password:
+  username: 3zcurdia
+  password: 
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -41,15 +41,15 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: myapp_test
+  database: gifmark_test
   pool: 5
-  username: myapp
-  password:
+  username: 3zcurdia
+  password: 
 
 production:
   adapter: postgresql
   encoding: unicode
-  database: myapp_production
+  database: gifmark_production
   pool: 5
-  username: myapp
-  password:
+  username: 3zcurdia
+  password: 
