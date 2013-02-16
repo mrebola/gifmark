@@ -35,4 +35,5 @@ group :production do
   gem 'memcachier'
   gem 'dalli'
   gem 'fog'
+  gem 'unicorn'
 end
