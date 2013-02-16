@@ -18,5 +18,9 @@
   %hr/
   .preview
     %h2 Preview
-    %h3.title
-    %img
+    - if @gif.persisted?
+      %h3.title= @gif.title 
+      %img{ src: "#{@gif.url}" }
+    - else
+      %h3.title
+      %img
