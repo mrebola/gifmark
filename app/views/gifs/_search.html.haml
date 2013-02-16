@@ -1,6 +1,7 @@
 .container
   .hero-unit
     %h1.logo= link_to "gifMark!", root_url
+    %p Because the only thing that the humanity needs was... more gifs, and a place to find it.
     = form_tag root_path, method: :get, class: "pull-right" do
       .input-append
         = search_field_tag :q , nil, placeholder: "Search", class: 'span5'

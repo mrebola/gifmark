@@ -1,6 +1,7 @@
 # giftmark
 
-Bookmarks for gif's.
+Because the only thing that the humanity needs was... more gifs, and a place to find it.
+Just for fun I made a silly app to find and bookmark my gifs.
 
 ## Contribue to the project
 
