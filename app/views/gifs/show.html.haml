@@ -1,15 +1,11 @@
-%h2= @gif.title
-%p
-  = image_tag @gif.url
-  %br/
-  %small
-    Checksum:
-    = @gif.checksum
-  %br/
-  Tags:
-  = tags_links @gif.tag_list
+.align-center
+  %h1= @gif.title
+  %p= image_tag @gif.url
+  %p
+    %b Tags:
+    = tags_links @gif.tag_list  
 
-%p
-  = link_to 'Edit', edit_gif_path(@gif)
-  \|
-  = link_to 'Back', root_url
+  %p
+    = link_to 'Edit', edit_gif_path(@gif)
+    \|
+    = link_to 'Back', root_url

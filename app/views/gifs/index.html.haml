@@ -1,10 +1,2 @@
-= render "gifs/search"
-
-.span8
-  = render @gifs
-  .pull-right= paginate @gifs
-
-.span3
-  #tag_cloud
-    - tag_cloud Gif.tag_counts, %w[small medium large] do |tag, css_class| 
-      = link_to tag.name, tag_path(tag.name), class: css_class
+= render @gifs
+.pull-right= paginate @gifs

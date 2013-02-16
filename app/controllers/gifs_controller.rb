@@ -9,6 +9,8 @@ class GifsController < ApplicationController
       @gifs = Gif.search(params[:q])
     end
     @gifs = @gifs.page(params[:page]).per(5)
+
+    respond_with @gifs
   end
 
   def show

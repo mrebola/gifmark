@@ -4,10 +4,11 @@
       = link_to "gifMark!", root_url, class: 'brand'
       %ul.nav
         %li
-          = link_to "New", new_gif_path
+          = link_to "Add New Gif", new_gif_path
 
       %ul.nav.pull-right
         %li
           = form_tag root_path, method: :get, class: "navbar-form" do
             = search_field_tag :q, nil, placeholder: "Search", class: "search-query"
 
+= fork_me "https://github.com/3zcurdia/gifmark"

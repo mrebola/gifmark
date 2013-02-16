@@ -1,12 +1,26 @@
 !!! 5
 %html
   %head
-    %title gifMark
+    %title gifMark!
     = stylesheet_link_tag    :application, media: :all
     = javascript_include_tag :application 
     = csrf_meta_tags
   %body
-    = render "shared/topnav"
+    %header
+      = render "shared/topnav"
+      = render "gifs/search" if home?
     .container
-      = render "shared/forkme"
-      = yield
+      - if home?
+        .main
+          = yield
+        .sidebar( data-spy="affix" data-offset-top="240" )
+          #tag_cloud
+            - tag_cloud Gif.tag_counts, %w[small medium large xlarge] do |tag, css_class| 
+              = link_to tag.name, tag_path(tag.name), class: css_class
+      - else
+        = yield
+    %footer
+      %p.align-center
+        Copyright 
+        = Time.now.year
+        &copy; 3zcurdia

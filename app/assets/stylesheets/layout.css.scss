@@ -5,24 +5,52 @@ body{
   padding-top: 70px;
 }
 
-.logo{
-  font-family: ChunkFiveRegular;
-  font-size: 42px;
+footer{
+  min-height: 200px;
+  padding-top: 40px;
 }
 
+.logo{
+  font-family: ChunkFiveRegular;
+  margin: 0;
+  a{ 
+    text-decoration: none;
+    color: black;
+    margin-left: 65px;
+    &:hover{ color: black; }
+  }
+  &:before{
+    position: absolute;
+    top: 40px;
+    width: 82px;
+    height: 140px;
+    display: block;
+    background: url(image_path("bookmark.png")) 0 10px no-repeat;
+    content: "";
+  }
+}
 #tag_cloud {
-  line-height: 1.6em;
+  line-height: 1.8em;
   .small { font-size: 0.8em; }
   .medium { font-size: 1.2em; }
   .large { font-size: 1.8em; }
+  .xlarge { font-size: 2.0em; }
 }
 
-.span8{
+.main{
+  @include makeColumn(8);
   img{
     max-width: 400px;
   }
 }
+.sidebar{
+  @include makeColumn(3);
+}
 
+.affix{
+  top: 50px;
+  right: 229px;
+}
 .align-center{ text-align: center; }
 .align-right{ text-align: rigth; }
 .align-left{ text-align: left; }
