@@ -10,5 +10,7 @@
         %li
           = form_tag root_path, method: :get, class: "navbar-form" do
             = search_field_tag :q, nil, placeholder: "Search", class: "search-query"
+        %li
+          = link_to "Sing In", "/tag/404"
 
 = fork_me "https://github.com/3zcurdia/gifmark"
