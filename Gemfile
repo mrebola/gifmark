@@ -29,6 +29,7 @@ gem 'haml-rails'
 gem 'kaminari'
 gem 'texticle', '~> 2.0', require: 'texticle/rails'
 gem 'acts-as-taggable-on', '~> 2.3.1'
+gem 'sidekiq'
 
 group :production do
   gem 'newrelic_rpm'
