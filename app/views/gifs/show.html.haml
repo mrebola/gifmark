@@ -5,6 +5,9 @@
   %small
     Checksum:
     = @gif.checksum
+  %br/
+  Tags:
+  = tags_links @gif.tag_list
 
 %p
   = link_to 'Edit', edit_gif_path(@gif)

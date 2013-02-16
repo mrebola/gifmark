@@ -2,14 +2,19 @@ require 'open-uri'
 require 'digest/sha1'
 
 class Gif < ActiveRecord::Base
-  attr_accessible :title, :url
+  attr_accessible :title, :url, :tag_list
+  acts_as_taggable
   validates :url, presence: true
   validates :url, :checksum, uniqueness: true
 
   before_save :calculate_checksum, on: :create
 
   def self.search query
-  	basic_search(title: query)  	
+    if query
+  	  basic_search(title: query)
+    else
+      order('created_at DESC')
+    end
   end
 
   def calculate_checksum

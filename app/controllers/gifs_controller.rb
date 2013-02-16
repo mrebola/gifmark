@@ -3,7 +3,12 @@ class GifsController < ApplicationController
   before_filter :load, only: [ :show, :edit, :update, :destroy ]
 
   def index
-    @gifs = Gif.search(params[:q]).order('created_at DESC')
+    if params[:tag]
+      @gifs = Gif.tagged_with(params[:tag])
+    else
+      @gifs = Gif.search(params[:q])
+    end
+    @gifs = @gifs.page(params[:page]).per(5)
   end
 
   def show
