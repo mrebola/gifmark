@@ -10,15 +10,12 @@
       = render "shared/topnav"
       = render "gifs/search" if home?
     .container
-      - if home?
-        .main
-          = yield
-        .sidebar( data-spy="affix" data-offset-top="240" )
-          #tag_cloud
-            - tag_cloud Gif.tag_counts, %w[small medium large xlarge] do |tag, css_class| 
-              = link_to tag.name, tag_path(tag.name), class: css_class
-      - else
+      .main
         = yield
+      .sidebar( data-spy="affix" data-offset-top="240" )
+        #tag_cloud
+          - tag_cloud Gif.tag_counts, %w[small medium large xlarge] do |tag, css_class| 
+            = link_to tag.name, tag_path(tag.name), class: css_class
     %footer
       %p.align-center
         Copyright 
