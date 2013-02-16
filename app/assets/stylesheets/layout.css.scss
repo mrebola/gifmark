@@ -1,1 +1,15 @@
 @import "bootstrap";
+@import "fonts";
+
+body{
+  padding-top: 70px;
+}
+
+.logo{
+  font-family: ChunkFiveRegular;
+  font-size: 42px;
+}
+
+.align-center{ text-align: center; }
+.align-right{ text-align: rigth; }
+.align-left{ text-align: left; }
