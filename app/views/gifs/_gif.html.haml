@@ -1,6 +1,5 @@
-= link_to gif do
-  .row
-    %h2= gif.title
-    = image_tag gif.url
-    %br/
-    %small= gif.checksum
+.row.align-center
+  %h2= gif.title
+  = link_to image_tag( gif.url ), gif 
+  %br/
+  = tags_links gif.tag_list
